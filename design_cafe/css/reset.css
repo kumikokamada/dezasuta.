@@ -21,7 +21,9 @@ dl {
     "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
     "ＭＳ 明朝", serif;
   font-feature-settings: "palt";
+  box-sizing: border-box;
 }
+
 a {
   /*下線を消す*/
   text-decoration: none;
@@ -36,11 +38,13 @@ ul {
   /*左の「・」を消す*/
   list-style: none;
 }
+
 img {
   width: 100%;
   vertical-align: bottom;
   border: none;
 }
+
 div {
   box-sizing: border-box;
 }

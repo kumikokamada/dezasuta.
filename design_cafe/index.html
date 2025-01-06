@@ -5,14 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デザインカフェ</title>
     <link rel="stylesheet" href="./css/reset.css">
+
+    <!-- ▼slick読み込み -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+     <!-- slick読み込み▲ -->
+
+
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- 
+
+①
+　SP版を制作した際に記述したSP用の画像がPC版にも常時反映されてしまいました。
+　SP版がとくに、うまく反映できずぐちゃぐちゃです💦
+　TOPへ戻るボタン、先日まで表示できていたのですが、気づいたら表示されなくなってしまいました。
+
+
+②
+　PC版→SP版の順でサイトを制作する際に
+　SP版でつけたプロパティをSP版で変更したい場合は、
+
+　「新たに記述すれば上書きされる。記述しなければSP版のプロパティ値が引き継がれる」
+
+　という理解であっていますでしょうか？
+
+　また、例えば、marginを無くしたい場合
+　
+　margin: none;　と、
+　margin: 0px;　は
+　どちらでも同じ意味合いと捉えて大丈夫でしょうか？
+　反映されたりされなかったり、の箇所があったような気がしたので確認がしたいです。🙇🏻‍♀️
+
+
+③
+　marginとpaddingの使い分けが、正直いまいちしっくりきていません。
+　design_cafeでは、とりあえず希望の余白がとれるようにと深く考えず乱用した感があります。💦
+
+
+講義動画 複数回見ましたが、聞き逃していたらすみません。
+添削よろしくお願いいたします🙇🏻‍♀️
+ -->
+
+
 </head>
 <body>
+    <div class="top-image">
+    <a href="./index.html"><img src="links/to_top@2x.png"></a>
+    </div>
+
     <header id="header">
         <div class="header_inner">
             <h1 class="logo">
                 <a href="./index.html">
-                <img src="./Links/design_cafe_logo_header@2x.png" alt="デザインカフェ" />
+                <img src="./Links/design_cafe_logo_header@2x.png" alt="デザインカフェ">
                 </a>
             </h1>
             <nav class="header_nav">
@@ -25,8 +74,39 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- ↓以下 ハンバーガーメニュー  -->
+        <div class="hamburger">
+            <span></span>
+        </div>
+        <nav class="header_nav-sp">
+            <ul class="header_nav-list">
+                <li class="header_nav-item"><a href="#about">ABOUT US</li>
+                <li class="header_nav-item"><a href="#menu">MENU</li>
+                <li class="header_nav-item"><a href="#gallery">GALLERY</li>
+                <li class="header_nav-item"><a href="#event">EVENT</li>
+                <li class="header_nav-item"><a href="#access">ACCESS</li>
+             </ul>
+        </nav>
+        <!-- ↑以上 ハンバーガーメニュー  -->
+
         <div class="main-visual">
-            <img src="./links/pc_first-100.jpg" alt="カフェ店内の様子" />
+
+            <picture>
+                <source srcset="./links/sp_main_vs@2x-100.jpg"
+                media="(max-width:767px)">
+
+            <img src="./links/pc_first-100.jpg" alt="カフェ店内の様子" /> 
+            </picture>
+
+            <picture>
+                <source
+                  srcset="./links/sp_main_vs_2@2x-100.jpg"
+                  media="(max-width: 767px)"
+                />
+                <img src="./links/slider_2.jpg" alt="カフェ店内の様子" />
+              </picture>
+
         </div>
     </header>
 
@@ -41,40 +121,60 @@ HTML,CSSともに理解が不十分と痛感しました💦
 よろしくお願いいたします。
 -->
 
-
-    <div class="lead"><p>Have a happy day From a cup of coffee.</p>
+    <div class="lead">
+        <div class="lead01"><p>Have a happy day From a cup of coffee.</p>
+        </div>
         <div class="lead02"><p>ハッピーに溢れる1日を<br>1杯のコーヒーから。</p>
-            <div class="lead03"><p>毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
-            </div>
+        </div>
+        <div class="lead03"><P>毎日を丁寧に大切に過ごしたい。<br class="br-sp">だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間と<br class="br-sp">こだわりのコーヒーを提供したい。</p>
         </div>
     </div>
 
+    <section id="about" class="wrapper">
+        <div class="about-image">
+            <img src="./links/pc_about-100.jpg" alt="">
+        </div>
+        <div class="about-tag">
+            <h2 class="section-tag">
+                <img src="./links/about_us@2x.png" alt="">
+            </h2>
 
+            <picture>
+                <source class="about-image-sp"
+                  srcset="links/about_us@2x-100.jpg"
+                  media="(max-width: 767px)"/>
+                <img src="./links/slider_2.jpg" alt="" />
+              </picture>
 
-
-    <section id="about">
-        <h2 class="section-tag">
-            <ul class="about-tag">
-                <li><img src="./links/pc_about-100.jpg" alt=""></li>
-                <li><img src="./links/about_us@2x.png" alt=""></li>
-            </ul>
-        </h2>
-        <div class="menu-text01"><p>私たちが提供する<br>こだわりのコーヒー</p>
-            <div class="menu-text02"<p>サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。</p>
+            <div class="about-text01">        
+            <p>私たちが提供する<br>こだわりのコーヒー</p>
+            </div>
+            <div class="about-text02">
+                <p>サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。</p>
             </div>
         </div>
-    </section>        
+    </section> 
 
 
-
-    <section id="menu">
+    <section id="menu" class="wrapper">
         <h2 class="section-tag">
             <img src="./links/menu@2x.png" alt="">
         </h2>
         <ul class="menu-pic">
-            <li><img src="./links/pc_menu_drink-100.jpg" alt=""></li>
-            <li><img src="./links/pc_menu_food-100.jpg" alt=""></li>
-            <li><img src="./links/pc_menu_sweets-100.jpg" alt=""></li>
+            <li><img src="./links/pc_menu_drink-100.jpg" alt="">
+            <h3 class="menu-title">Drink</h3>
+            <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </li>
+
+            <li><img src="./links/pc_menu_food-100.jpg" alt="">
+            <h3 class="menu-title">Food</h3>
+            <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </li>
+
+            <li><img src="./links/pc_menu_sweets-100.jpg" alt="">
+            <h3 class="menu-title">Sweets</h3>
+            <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </li>
         </ul>
     </section>
     
@@ -84,8 +184,13 @@ HTML,CSSともに理解が不十分と痛感しました💦
         <h2 class="section-tag">
             <img src="./links/gallery@2x.png" alt="">
         </h2>
-        <br>
-        <br>
+        <picture>
+            <source class="gallery-pic-sp"
+              srcset="links/pc_gallary_03-100.jpg"
+              media="(max-width: 767px)"/>
+            <img src="./links/slider_2.jpg" alt="" />
+          </picture>
+
         <ul class="gallery-pic">
             <li><img src="./links/pc_gallary_05-100.jpg" alt=""></li>
             <li><img src="./links/pc_gallary_04-100.jpg" alt=""></li>
@@ -93,30 +198,26 @@ HTML,CSSともに理解が不十分と痛感しました💦
             <li><img src="./links/pc_gallary_02-100.jpg" alt=""></li>
             <li><img src="./links/pc_gallary_01-100.jpg" alt=""></li>
         </ul>
-    </section>
-
-
-                
-    <section id="event">
+    </section>                
+    <section id="event" class="wrapper">
         <h2 class="section-tag">
             <img src="./links/event@2x.png" alt="">
         </h2>
         <ul>
             <li>
                 <time datetime="">2020.06.23</time>
-                <p><a><href="">7月はイベント出店のため0/0お休みします</a>
+                <p><a href="">7月はイベント出店のため0/0お休みします</a></p>
             </li>
             <li>
-                <time datetime=""2020.0315></time>
-                <p><a><href=""></href>春の新商品新発売。話題のあのブランドとコラボ</a>
+                <time datetime="">2020.0315</time>
+                <p><a href="">春の新商品新発売。話題のあのブランドとコラボ</a></p>
             </li>
             <li>
-                <time datetime=""2020.0206></time>
-                <p><a><href=""></href>コーヒーの日で30％OFFイベントを開催［3日間限定］</a>
+                <time datetime="">2020.0206</time>
+                <p><a href="">コーヒーの日で30％OFFイベントを開催［3日間限定］</a></p>
             </li>
         </ul>
     </section>
-
 
     <section id="access">
         <h2 class="section-tag">
@@ -126,15 +227,37 @@ HTML,CSSともに理解が不十分と痛感しました💦
     </section>
     
 
+     
+
+
+
     <footer id="footer">
-        <ul>
-            <li><img src="./links/design_cafe_logo_footer@2x.png" alt=""></li>
-        </ul>
-        <p>OPEN 18:00 / CLOSE 24:00<br>〒150-0022<br>東京都渋谷区東京南123デザインビルB1<br>MAIL：info@designcafe.tokyo</p>
+        <div class="wrapper">
+        <img class="logo" src="./links/design_cafe_logo_footer@2x.png" alt="">
+        <p class="storeinfo">OPEN 18:00 / CLOSE 24:00<br>〒150-0022<br>東京都渋谷区東京南123デザインビルB1<br>MAIL：info@designcafe.tokyo</p>
+        </div>
+        <p class="copyright">2021 DESIGN CAFE</p>
     </footer>
-    <p>2021 DESIGN CAFE</p>
 
+    <script>
+        $(function (){
+            // ▼ハンバーガーメニュー
+            $(".hamburger").click(function () {
+                $(".hamburger").toggleClass("open");
+                $(".header_nav-sp").fadeToggle();
+            });
+            // ハンバーガーメニュー▲
 
+        //  スライダー↓
+        $(".main-visual").slick({
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+        });
+    });           
+
+    </script>
 
 </body>
 </html>
