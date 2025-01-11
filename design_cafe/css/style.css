@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+/* * { */
+	/* outline: 1px solid magenta; */
+/* }  */
+
 @media screen and (max-width: 400px) {
     ul{
         flex-direction: column;
@@ -168,19 +172,27 @@ p {
     margin-bottom: 23px;
 }
 
-
 .gallery-pic{
     display: flex;
 }
 
+.gallery-pic img{ 
+    width: 100%;
+}
+
 #gallery .section-tag{
     margin-top: 100px;
-} 
+}
+
+.slider img {
+    width: 100%;
+}
 
 #event ul{
     background: #ffffff;
     border: 3px solid #4F260B;
     padding: 30px 0 10px;
+    margin: 0 20px;
 }
 
 #event li{
@@ -214,10 +226,9 @@ p {
 }
 
 #footer .wrapper{
-    width: 1000px;
+    max-width: 1000px;
     display: flex;
     gap: 53px;
-    padding-right: 460px;
     padding-top:82px;
     padding-bottom:85px;
 }
@@ -249,6 +260,20 @@ iframe{
 }
 
 
+
+/* ▼メインビジュアルのスライダー黒チョボの調整▼ */
+.slick-dots {
+    bottom:10px;
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before{
+    color:#ffffff;
+}
+/* ▲メインビジュアルのスライダー黒チョボの調整▲ */
+
+
+
 @media screen and (max-width: 1100px){
     .header_nav{
         display: none;
@@ -268,92 +293,78 @@ iframe{
     }
     
     
-.hamburger{
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;  /* 前面に浮かせるやつ */
-    right: 10px;
-    top: 10px;
-    cursor: pointer;  /* クリックできる概念（指マークでる） */
-    z-index: 9999; /*最前面！最前階層！9999が最大値  */
-}
+    .hamburger{
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;  /* 前面に浮かせるやつ */
+        right: 10px;
+        top: 10px;
+        cursor: pointer;  /* クリックできる概念（指マークでる） */
+        z-index: 9999; /*最前面！最前階層！9999が最大値  */
+        }
 
-.hamburger span{
-    width: 30px;
-    height: 2px;
-    background-color: #ffffff;
-    position: absolute;  /* 前面に浮かせるやつ */
-    top: 14px;
-    transition: 0.3s;
-}
+    .hamburger span{
+        width: 30px;
+        height: 2px;
+        background-color: #ffffff;
+        position: absolute;  /* 前面に浮かせるやつ */
+        top: 14px;
+        transition: 0.3s;
+        }
 
 /* 擬似要素 （ハンバーガーメニューの上の線、下の線）*/
-.hamburger span::before {
-    width: 30px;
-    height: 2px;
-    background-color: #ffffff;
-    position: absolute;  /* 前面に浮かせるやつ */
-    content: "";
-    top: -12px;     /* 上 */
-    transition: 0.3s;
-}
+    .hamburger span::before {
+        width: 30px;
+        height: 2px;
+        background-color: #ffffff;
+       position: absolute;  /* 前面に浮かせるやつ */
+        content: "";
+        top: -12px;     /* 上 */
+        transition: 0.3s;
+        } 
 
-.hamburger span::after {
-    width: 30px;
-    height: 2px;
-    background-color: #ffffff;
-    position: absolute;  /* 前面に浮かせるやつ */
-    content: "";
-    bottom: -12px;  /* 下 */
-    transition: 0.3s;    
-}
+    .hamburger span::after {
+        width: 30px;
+        height: 2px;
+        background-color: #ffffff;
+        position: absolute;  /* 前面に浮かせるやつ */
+        content: "";
+        bottom: -12px;  /* 下 */
+        transition: 0.3s;    
+        }
 
 /*↓ハンバーガーの×ボタン  */
-.open span {
-    background-color: transparent;
+    .open span {
+        background-color: transparent;
+        }
+
+    .open span::before {
+        transform: rotate(45deg);
+        top: 0;
+        }
+
+    .open span::after{
+        transform: rotate(-45deg);
+        bottom: 0;
+        }
+
+    .header_nav-sp {
+        position: absolute; /*　◀︎浮かせる */
+        z-index: 9998; /*　◀︎最前面！最前階層！9999が最大値なので、これは最前から2階層目になる  */
+        width: 100%;
+        height: 100vh;
+        background-color: #00000096;
+        }
+
+    .header_nav-sp .header_nav-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 20px;
+        }
 }
-
-.open span::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.open span::after{
-    transform: rotate(-45deg);
-    bottom: 0;
-}
-
-.header_nav-sp {
-    position: absolute; /*　◀︎浮かせる */
-    z-index: 9998; /*　◀︎最前面！最前階層！9999が最大値なので、これは最前から2階層目になる  */
-    width: 100%;
-    height: 100vh;
-    background-color: #00000096;
-}
-
-.header_nav-sp .header_nav-list{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 20px;
-}
-
-/* ▼メインビジュアルのスライダー黒チョボの調整▼ */
-.slick-dots {
-    bottom:10px;
-}
-
-.slick-dots li button:before,
-.slick-dots li.slick-active button:before{
-    color:#ffffff;
-}
-/* ▲メインビジュアルのスライダー黒チョボの調整▲ */
-
-}
-
-
 
 
 @media screen and (max-width: 767px) {   
@@ -379,19 +390,22 @@ iframe{
     }
 
     #about .section-tag{
+        position: absolute;
         text-align: center;
+        top:0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     #about .about-tag{
         width: 100%;
-        height: 245px;
-        padding: 0px;
+        padding: 0px 20px;
     }
-
 
     .about-text01{
         font-size: 36px;
         line-height: 1.2;
+        margin-top: 33px;
     }
 
     .about-text02{
@@ -402,7 +416,7 @@ iframe{
 
     #about .section-tag img{
         text-align: left;
-        margin-top: 67px;
+        margin-top: 100px;
         margin-bottom: 18px;
     }
 
@@ -417,14 +431,22 @@ iframe{
         flex-direction: column;
     }
 
+    #about{
+        position: relative;
+        padding-top: 60px;
+    }
+
     #gallery .section-tag{
         margin-top: 67px;
         margin-bottom: 18px;
     }
 
-    .about-image  img{
-        display: none;
-        /* margin-top: 50px; */
+    .about-image{
+        width: 100%;
+    }
+
+    .about-image img{
+        border-radius: 0;
     }
 
     .about-image-sp{
@@ -447,12 +469,9 @@ iframe{
     } 
 
     #menu ul{
+        width: 90%;
+        margin: 0 auto;
         flex-direction: column;
-    }
-
-    #menu li img{
-        width: 300px;
-        height: 200px;
     }
 
     .menu-pic li img {
@@ -465,15 +484,10 @@ iframe{
         margin-bottom: 20px;
     }
 
-    .gallery-pic {
-        display: none;
-    }
-
     .gallery-pic-sp img{
         width: 300px;
         height: 200px;       
     }
-
 
     #event .section-tag{
         margin-top: 35px;
@@ -492,6 +506,14 @@ iframe{
         margin-bottom: 29px;
     }
 
+    #event a{
+        display: block;
+        border-bottom: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-decoration: underline;
+    }
 
     #access .section-tag{
         margin-top: 35px;
@@ -505,7 +527,6 @@ iframe{
     }
 
     #footer .wrapper{
-        /* width: 1000px; */
         flex-direction:column ;
         gap: 0px;
         padding-top: 0px;
@@ -515,13 +536,11 @@ iframe{
     #footer .logo{
         padding-top:47px;
         padding-bottom: 34px;
-
     }
 
     #footer .wrapper{
         margin-left: 22px;
     }
-
 
     .storeinfo p{
         font-size: 18px;
@@ -540,7 +559,4 @@ iframe{
         bottom: 214px;
         right: 10px;
     }
-    
-
-
 }

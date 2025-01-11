@@ -4,51 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デザインカフェ</title>
+
     <link rel="stylesheet" href="./css/reset.css">
 
+
     <!-- ▼slick読み込み -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-     <!-- slick読み込み▲ -->
+    <link
+    rel="stylesheet" 
+    type="text/css" 
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- slick読み込み▲ -->
+
+    <!-- ▼lightboxファイル▼ -->
+    <!-- <link rel="stylesheet" href="./css/lightbox.min.css"> -->
+    <!-- ▲lightboxファイル▲ -->
 
 
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<!-- 
-
-①
-　SP版を制作した際に記述したSP用の画像がPC版にも常時反映されてしまいました。
-　SP版がとくに、うまく反映できずぐちゃぐちゃです💦
-　TOPへ戻るボタン、先日まで表示できていたのですが、気づいたら表示されなくなってしまいました。
-
-
-②
-　PC版→SP版の順でサイトを制作する際に
-　SP版でつけたプロパティをSP版で変更したい場合は、
-
-　「新たに記述すれば上書きされる。記述しなければSP版のプロパティ値が引き継がれる」
-
-　という理解であっていますでしょうか？
-
-　また、例えば、marginを無くしたい場合
-　
-　margin: none;　と、
-　margin: 0px;　は
-　どちらでも同じ意味合いと捉えて大丈夫でしょうか？
-　反映されたりされなかったり、の箇所があったような気がしたので確認がしたいです。🙇🏻‍♀️
-
-
-③
-　marginとpaddingの使い分けが、正直いまいちしっくりきていません。
-　design_cafeでは、とりあえず希望の余白がとれるようにと深く考えず乱用した感があります。💦
-
-
-講義動画 複数回見ましたが、聞き逃していたらすみません。
-添削よろしくお願いいたします🙇🏻‍♀️
- -->
+    <!-- ▼lightboxファイル▼ -->
+    <!-- <script src="js/lightbox-plus-jquery.min.js"></script> -->
+    <!-- <script src="js/lightbox.min.js"></script> -->
+    <!-- ▲lightboxファイル▲ -->
 
 
 </head>
@@ -81,44 +63,48 @@
         </div>
         <nav class="header_nav-sp">
             <ul class="header_nav-list">
-                <li class="header_nav-item"><a href="#about">ABOUT US</li>
-                <li class="header_nav-item"><a href="#menu">MENU</li>
-                <li class="header_nav-item"><a href="#gallery">GALLERY</li>
-                <li class="header_nav-item"><a href="#event">EVENT</li>
-                <li class="header_nav-item"><a href="#access">ACCESS</li>
-             </ul>
+                <li class="header_nav-item"><a href="#about">ABOUT US</a></li>
+                <li class="header_nav-item"><a href="#menu">MENU</a></li>
+                <li class="header_nav-item"><a href="#gallery">GALLERY</a></li>
+                <li class="header_nav-item"><a href="#event">EVENT</a></li>
+                <li class="header_nav-item"><a href="#access">ACCESS</a></li>
+            </ul>
         </nav>
         <!-- ↑以上 ハンバーガーメニュー  -->
 
         <div class="main-visual">
-
-            <picture>
-                <source srcset="./links/sp_main_vs@2x-100.jpg"
-                media="(max-width:767px)">
-
-            <img src="./links/pc_first-100.jpg" alt="カフェ店内の様子" /> 
-            </picture>
-
             <picture>
                 <source
-                  srcset="./links/sp_main_vs_2@2x-100.jpg"
-                  media="(max-width: 767px)"
+                srcset="./links/sp_main_vs@2x-100.jpg"
+                media="(max-width:767px)"
+                />
+            <img src="./links/pc_first-100.jpg" alt="カフェ店内の様子" /> 
+            </picture>
+            <picture>
+                <source
+                srcset="./links/sp_main_vs_2@2x-100.jpg"
+                media="(max-width: 767px)"
                 />
                 <img src="./links/slider_2.jpg" alt="カフェ店内の様子" />
-              </picture>
-
+            </picture>
         </div>
     </header>
 
 
-<!--CSSでの一括指定が出来なかったり画像と文字が重なったり、 真ん中にも寄らなかったりぐちぐちゃになってしまいました。
-HTML,CSSともに理解が不十分と痛感しました💦
-まだ未完成なのですが、どこをどう修正していけばいいのか判断もできないため途中なのですが添削いただけますと幸いです🙇🏻‍♀️
+<!--
+🔴SP版にした際に、「page top」のボタンが表示されません。
 
-また、任意でつけるclass名も、ふさわしい名前がパッとでてこず、そこだけでも考える時間が長くなっています。class名をつけるのになにかコツ？ポイントありますでしょうか。
+🔴チャレンジ課題のligthboxをしようと思いjsのファイル等読み込ませようとしたら、読み込ませる場所（記述の場所）がおかしいのかslickが反映されなくなったため諦めました。。💦
+　非表示にして記述は残したのですが、用意するファイルは合っていますでしょうか？
 
-各セクションごとに上下に余分な改行スペースがあるのは、セクションごとにわかりやすくしておきたいと思ったためです。
-よろしくお願いいたします。
+🔴menu-picの真ん中foodの画像が、よく見ると大きさが両隣のdrink,sweetsの画像とわずかに異なって表示されています。
+　検証ツールで確認しても、原因がよくわかりませんでした。
+
+🔴marginとpaddingの使い分けが、正直いまいちしっくりきていません。
+　design_cafeでは、とりあえず希望の余白がとれればokと思い」深く考えず乱用した感があります。💦
+
+
+以上、よろしくお願いいたします！🙇🏻‍♀️
 -->
 
     <div class="lead">
@@ -132,19 +118,14 @@ HTML,CSSともに理解が不十分と痛感しました💦
 
     <section id="about" class="wrapper">
         <div class="about-image">
-            <img src="./links/pc_about-100.jpg" alt="">
+            <picture><source srcset="./Links/about_us.jpg" media="(max-width: 767px)" />
+            <img src="./links/pc_about-100.jpg" alt=""/>
+            </picture>
         </div>
         <div class="about-tag">
             <h2 class="section-tag">
                 <img src="./links/about_us@2x.png" alt="">
             </h2>
-
-            <picture>
-                <source class="about-image-sp"
-                  srcset="links/about_us@2x-100.jpg"
-                  media="(max-width: 767px)"/>
-                <img src="./links/slider_2.jpg" alt="" />
-              </picture>
 
             <div class="about-text01">        
             <p>私たちが提供する<br>こだわりのコーヒー</p>
@@ -184,12 +165,7 @@ HTML,CSSともに理解が不十分と痛感しました💦
         <h2 class="section-tag">
             <img src="./links/gallery@2x.png" alt="">
         </h2>
-        <picture>
-            <source class="gallery-pic-sp"
-              srcset="links/pc_gallary_03-100.jpg"
-              media="(max-width: 767px)"/>
-            <img src="./links/slider_2.jpg" alt="" />
-          </picture>
+        
 
         <ul class="gallery-pic">
             <li><img src="./links/pc_gallary_05-100.jpg" alt=""></li>
@@ -197,6 +173,7 @@ HTML,CSSともに理解が不十分と痛感しました💦
             <li><img src="./links/pc_gallary_03-100.jpg" alt=""></li>
             <li><img src="./links/pc_gallary_02-100.jpg" alt=""></li>
             <li><img src="./links/pc_gallary_01-100.jpg" alt=""></li>
+            <li><img src="./links/pc_gallary_03-100.jpg" alt=""></li>
         </ul>
     </section>                
     <section id="event" class="wrapper">
@@ -227,9 +204,6 @@ HTML,CSSともに理解が不十分と痛感しました💦
     </section>
     
 
-     
-
-
 
     <footer id="footer">
         <div class="wrapper">
@@ -248,15 +222,30 @@ HTML,CSSともに理解が不十分と痛感しました💦
             });
             // ハンバーガーメニュー▲
 
-        //  スライダー↓
-        $(".main-visual").slick({
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-        });
-    });           
+          //  スライダー↓
+            $(".main-visual").slick({
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+            });
 
+            $(".gallery-pic").slick({
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                slidesToShow: 5,
+                responsive: [
+                    {
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 1,
+                    },
+                    },
+                ],
+            });
+        });
     </script>
 
 </body>
