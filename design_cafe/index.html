@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デザインカフェ</title>
 
-    <link rel="stylesheet" href="./css/reset.css">
-
-
-    <!-- ▼slick読み込み -->
+    <!-- ▼slick読み込み 【🔴style cssの上に配置🔴】-->
     <link
     rel="stylesheet" 
     type="text/css" 
@@ -17,23 +14,25 @@
     rel="stylesheet" 
     type="text/css" 
     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <!-- slick読み込み▲ -->
+    <!-- slick css読み込み▲ -->
 
-    <!-- ▼lightboxファイル▼ -->
-    <!-- <link rel="stylesheet" href="./css/lightbox.min.css"> -->
-    <!-- ▲lightboxファイル▲ -->
+    <!-- ▼lightbox cssファイル 🔴style cssの上に配置🔴】-->
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <!-- lightbox cssファイル▲ -->
 
-
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- 🔴▲style.cssは、プラグインcssの下に配置▲🔴-->
+
+    <!-- ▼ JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--  JQuery ▲ -->
+
+    <!-- ▼ slick のscript【🔴JQueryの下に配置🔴】 --> 
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- ▼lightboxファイル▼ -->
-    <!-- <script src="js/lightbox-plus-jquery.min.js"></script> -->
-    <!-- <script src="js/lightbox.min.js"></script> -->
-    <!-- ▲lightboxファイル▲ -->
-
-
+    <!--  slick のscript ▲-->
 </head>
+
 <body>
     <div class="top-image">
     <a href="./index.html"><img src="links/to_top@2x.png"></a>
@@ -92,19 +91,8 @@
 
 
 <!--
-🔴SP版にした際に、「page top」のボタンが表示されません。
-
-🔴チャレンジ課題のligthboxをしようと思いjsのファイル等読み込ませようとしたら、読み込ませる場所（記述の場所）がおかしいのかslickが反映されなくなったため諦めました。。💦
-　非表示にして記述は残したのですが、用意するファイルは合っていますでしょうか？
-
 🔴menu-picの真ん中foodの画像が、よく見ると大きさが両隣のdrink,sweetsの画像とわずかに異なって表示されています。
 　検証ツールで確認しても、原因がよくわかりませんでした。
-
-🔴marginとpaddingの使い分けが、正直いまいちしっくりきていません。
-　design_cafeでは、とりあえず希望の余白がとれればokと思い」深く考えず乱用した感があります。💦
-
-
-以上、よろしくお願いいたします！🙇🏻‍♀️
 -->
 
     <div class="lead">
@@ -165,16 +153,16 @@
         <h2 class="section-tag">
             <img src="./links/gallery@2x.png" alt="">
         </h2>
-        
-
+        <div class="image-box">
         <ul class="gallery-pic">
-            <li><img src="./links/pc_gallary_05-100.jpg" alt=""></li>
-            <li><img src="./links/pc_gallary_04-100.jpg" alt=""></li>
-            <li><img src="./links/pc_gallary_03-100.jpg" alt=""></li>
-            <li><img src="./links/pc_gallary_02-100.jpg" alt=""></li>
-            <li><img src="./links/pc_gallary_01-100.jpg" alt=""></li>
-            <li><img src="./links/pc_gallary_03-100.jpg" alt=""></li>
+            <li><a href="./links/pc_gallary_05-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_05-100.jpg" alt=""></a></li>
+            <li><a href="./links/pc_gallary_04-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_04-100.jpg" alt=""></a></li>
+            <li><a href="./links/pc_gallary_03-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_03-100.jpg" alt=""></a></li>
+            <li><a href="./links/pc_gallary_02-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_02-100.jpg" alt=""></a></li>
+            <li><a href="./links/pc_gallary_01-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_01-100.jpg" alt=""></a></li>
+            <li><a href="./links/pc_gallary_03-100.jpg" data-lightbox="abc" data-title=""><img src="./links/pc_gallary_03-100.jpg" alt=""></a></li>
         </ul>
+        </div>
     </section>                
     <section id="event" class="wrapper">
         <h2 class="section-tag">
@@ -210,7 +198,7 @@
         <img class="logo" src="./links/design_cafe_logo_footer@2x.png" alt="">
         <p class="storeinfo">OPEN 18:00 / CLOSE 24:00<br>〒150-0022<br>東京都渋谷区東京南123デザインビルB1<br>MAIL：info@designcafe.tokyo</p>
         </div>
-        <p class="copyright">2021 DESIGN CAFE</p>
+        <p class="copyright">© 2021 DESIGN CAFE</p>
     </footer>
 
     <script>
@@ -247,6 +235,8 @@
             });
         });
     </script>
+
+    <script src="js/lightbox.min.js"></script>
 
 </body>
 </html>
